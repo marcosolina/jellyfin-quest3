@@ -1,0 +1,3 @@
+# Private, machine-local files: server addresses, credentials, API keys.
+# The repository is public; nothing in here is ever committed.
+/private/

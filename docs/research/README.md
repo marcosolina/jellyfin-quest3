@@ -6,12 +6,13 @@ One file per research topic, named after the spike that produced it: `JQ-NNN-sho
 
 | Spike | Topic | File | Status |
 |---|---|---|---|
-| JQ-008 | Quest 3 platform basics | | Planned |
-| JQ-009 | Technology options | | Planned |
-| JQ-010 | Development environment | | Planned |
-| JQ-012 | Existing ways to watch Jellyfin on the Quest | | Planned |
-| JQ-015 | Jellyfin API and SDKs | | Planned |
-| JQ-018 | Video on the Quest 3 | | Planned |
+| JQ-008 | Quest 3 platform basics | [JQ-008-quest3-platform.md](JQ-008-quest3-platform.md) | Done |
+| JQ-009 | Technology options | [JQ-009-technology-options.md](JQ-009-technology-options.md) | Done |
+| JQ-010 | Development environment | [JQ-010-development-environment.md](JQ-010-development-environment.md) | Done |
+| JQ-011 | Marco's server and media | [JQ-011-server-and-media.md](JQ-011-server-and-media.md) | Done |
+| JQ-012 | Existing ways to watch Jellyfin on the Quest, format detection | [JQ-012-existing-solutions.md](JQ-012-existing-solutions.md) | Done |
+| JQ-018 | Video on the Quest 3 | [JQ-018-video-on-quest3.md](JQ-018-video-on-quest3.md) | Done (decoders to confirm on the headset, JQ-022) |
+| JQ-015 | Jellyfin API and SDKs | | Planned (before the sign-in milestone) |
 
 ## Format of a research file
 

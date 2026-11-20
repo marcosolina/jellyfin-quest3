@@ -22,9 +22,9 @@ The work moves in iterations. Each iteration has one clear goal and goes through
 | 5. Test | Automated tests, then Marco tests on the headset following the checklist in the iteration file. | Test results in the iteration file, bugs in the backlog. | **Marco accepts the stories.** |
 | 6. Release | Set the version number, update the changelog, tag the commit, produce the signed APK. | Git tag `vX.Y.Z`, `CHANGELOG.md` entry, release APK. | Release tag pushed (with Marco's go-ahead). |
 | 7. Deploy | Install the release on the Quest 3 (over USB or Wi-Fi). | App updated on the headset. | App starts and reaches the Jellyfin server. |
-| 8. Review | Marco uses the app day to day; feedback and bugs go into the backlog; short retrospective on how the iteration went. | Retrospective notes in the iteration file, new backlog items. | Goal of the next iteration agreed. |
+| 8. Review | Marco uses the app day to day; feedback and bugs go into the backlog. Claude reviews the structure and readability of the code (see [Code quality](#code-quality)). Short retrospective on how the iteration went. | Retrospective and code review notes in the iteration file; new backlog items, including refactoring tasks. | Goal of the next iteration agreed, refactoring tasks prioritized. |
 
-Phase 8 is an addition to the original list: it closes the loop (the "operate and monitor" part of DevOps) so that real use feeds the next iteration.
+Phase 8 is an addition to the original list: it closes the loop (the "operate and monitor" part of DevOps) so that real use and a look at the code's health feed the next iteration.
 
 ### Iteration rules
 
@@ -77,7 +77,35 @@ An item that cannot progress is marked **Blocked** in the board, with what it is
 - Acceptance criteria are met and verified on the Quest 3 by Marco.
 - Automated tests cover the logic that can be tested off the headset.
 - The app builds cleanly from a fresh clone.
-- Backlog, board, iteration file and (if needed) glossary and ADRs are updated.
+- The code follows the rules in [Code quality](#code-quality).
+- Backlog, board, iteration file and (if needed) glossary, ADRs and architecture description are updated.
+
+## Code quality
+
+The code must stay well organized and easy to read and maintain. This is a goal of the project in its own right, not something to fix at the end.
+
+### Rules while coding
+
+- Organize the code by feature (sign in, browse, player, cinema), with clear and consistent names, so that the folder tree tells what the app does.
+- Small files, classes and functions, each with one job.
+- Formatting and static checks run as part of the build, with tools chosen together with the technology (ADR-001). A build with violations is not done.
+- Comments explain why something is done, not what the code does.
+- No dead code and no commented-out code: Git keeps the history.
+- Refactoring and feature changes go in separate commits.
+- `docs/architecture.md` describes the code structure and its main components. It is created with the first code and kept current.
+
+### Code review at the end of each iteration
+
+In phase 8, Claude reviews the whole project structure and the code changed in the iteration, looking for:
+
+- files, classes or functions that grew too large or do too many things;
+- duplicated logic;
+- unclear names, or code in the wrong place for its feature;
+- logic without tests that could be tested off the headset;
+- outdated dependencies or deprecated APIs;
+- a gap between the code and `docs/architecture.md`.
+
+The findings are written in the iteration file. Refactoring worth doing becomes Task items in the backlog and is planned in the next iteration like any other work: it changes code, so it goes through build, test and release too.
 
 ## Documentation rules
 

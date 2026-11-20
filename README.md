@@ -21,7 +21,7 @@ The prioritized list of work is in the [backlog](docs/backlog.md).
 
 ## Status
 
-Iteration 1: research on the platform, the technology and the development tools. The [board](docs/board.md) shows the current state.
+Iteration 2: milestone 1, a hello world app on the Quest 3 to prove the tools and the install process. The technology is chosen: Meta Spatial SDK with Kotlin ([ADR-001](docs/decisions/ADR-001-technology-stack.md)). The [board](docs/board.md) shows the current state.
 
 ## How the project is run
 

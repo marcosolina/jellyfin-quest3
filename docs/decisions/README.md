@@ -6,7 +6,7 @@ Architecture decision records (ADRs): one file per significant technical choice,
 
 | ADR | Title | Status |
 |---|---|---|
-| ADR-001 | Technology stack (from spike JQ-009) | Planned |
+| [ADR-001](ADR-001-technology-stack.md) | Technology stack: Meta Spatial SDK with Kotlin | Accepted (2026-11-20) |
 
 ## Format of an ADR
 

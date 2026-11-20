@@ -2,7 +2,7 @@
 
 A native Meta Quest 3 app that connects to Marco's Jellyfin media server: a virtual cinema with 3D and 180/360 video, shown in the right mode for each file's format. Personal project: Claude is the developer, Marco is the product owner and the tester on the headset.
 
-The repository is public: never commit server addresses, IPs, usernames, tokens or passwords. Marco's server access details are in Claude's local project memory.
+The repository is public: never commit server addresses, IPs, usernames, tokens or passwords. Those go in `private/` (git-ignored); Marco's server access details are in `private/server.md`.
 
 Marco is new to Quest and Android development and to video encoding and decoding: explain technical terms plainly the first time they come up, and add them to the glossary.
 
@@ -22,7 +22,7 @@ Marco is new to Quest and Android development and to video encoding and decoding
 ## Current state
 
 - Live status: `docs/board.md`.
-- Technology stack: not chosen yet; decided in iteration 1 (spike JQ-009, ADR-001).
+- Technology stack: Meta Spatial SDK with Kotlin, Media3, Jellyfin Kotlin SDK, Compose (`docs/decisions/ADR-001-technology-stack.md`, accepted 2026-11-20).
 - Build, run and deploy commands: added here once the stack is chosen.
 
 ## Rules
@@ -31,5 +31,6 @@ Marco is new to Quest and Android development and to video encoding and decoding
 - Keep this file short: a line or two per topic, details live under `docs/`. One topic per file; link instead of copying.
 - Every significant technical choice gets an ADR, written so a non-expert can follow it.
 - No application code before Marco approves the iteration plan.
+- Keep the code well organized and readable; end every iteration with a code structure review whose refactoring needs become backlog tasks (`docs/process.md`, Code quality).
 - No commit, push, tag or release without Marco's go-ahead.
 - Markdown: one line per paragraph (no hard wrap); no spaced dashes in prose.
