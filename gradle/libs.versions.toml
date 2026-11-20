@@ -1,0 +1,40 @@
+# Versions are pinned on purpose (ADR-001): Spatial SDK is pre-1.0 and changes between releases.
+# Upgrades are deliberate backlog tasks, checked during the end-of-iteration code review.
+
+[versions]
+agp = "9.5.1"
+kotlin = "2.4.21"
+spatial-sdk = "0.15.0"
+androidx-compose = "1.12.1"
+androidx-compose-material3 = "1.4.0"
+androidx-activity = "1.13.0"
+androidx-core = "1.19.1"
+androidx-lifecycle = "2.11.1"
+coroutines = "1.11.0"
+junit = "4.13.2"
+spotless = "8.11.0"
+ktlint = "1.8.0"
+
+[libraries]
+spatial-sdk = { module = "com.meta.spatial:meta-spatial-sdk", version.ref = "spatial-sdk" }
+spatial-sdk-toolkit = { module = "com.meta.spatial:meta-spatial-sdk-toolkit", version.ref = "spatial-sdk" }
+spatial-sdk-vr = { module = "com.meta.spatial:meta-spatial-sdk-vr", version.ref = "spatial-sdk" }
+spatial-sdk-compose = { module = "com.meta.spatial:meta-spatial-sdk-compose", version.ref = "spatial-sdk" }
+spatial-sdk-isdk = { module = "com.meta.spatial:meta-spatial-sdk-isdk", version.ref = "spatial-sdk" }
+
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
+androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "androidx-compose" }
+androidx-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "androidx-compose" }
+androidx-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "androidx-compose-material3" }
+androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime", version.ref = "androidx-lifecycle" }
+kotlinx-coroutines-android ={ module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+
+junit = { module = "junit:junit", version.ref = "junit" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+# AGP 9 compiles Kotlin itself; declaring the Kotlin plugin (not applied) selects the Kotlin version it uses.
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
