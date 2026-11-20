@@ -1,3 +1,15 @@
 # Private, machine-local files: server addresses, credentials, API keys.
 # The repository is public; nothing in here is ever committed.
 /private/
+
+# Gradle and Kotlin
+.gradle/
+.kotlin/
+build/
+
+# Editors (Android Studio, VS Code) and the local SDK path
+.idea/
+.vscode/
+*.iml
+local.properties
+captures/

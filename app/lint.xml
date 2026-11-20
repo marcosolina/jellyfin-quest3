@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Lint runs with warnings as errors. Every exception below has its reason. -->
+<lint>
+    <!-- Horizon OS is Android 14: the app targets API 34 on purpose (ADR-001). -->
+    <issue id="OldTargetApi" severity="ignore" />
+    <issue id="ExpiredTargetSdkVersion" severity="ignore" />
+    <!-- Versions are pinned on purpose and upgraded as planned tasks, not whenever a release appears. -->
+    <issue id="GradleDependency" severity="ignore" />
+    <issue id="NewerVersionAvailable" severity="ignore" />
+    <issue id="AndroidGradlePluginVersion" severity="ignore" />
+    <!-- Quest headsets are 64 bit ARM only. -->
+    <issue id="ChromeOsAbiSupport" severity="ignore" />
+</lint>

@@ -18,12 +18,15 @@ Marco is new to Quest and Android development and to video encoding and decoding
 | Research results, one file per spike, with index and format | `docs/research/` |
 | Architecture decision records, with index and format | `docs/decisions/` |
 | Glossary of technical terms | `docs/glossary.md` |
+| Code structure, build checks, commands | `docs/architecture.md` |
+| Release notes | `CHANGELOG.md` |
 
 ## Current state
 
 - Live status: `docs/board.md`.
-- Technology stack: Meta Spatial SDK with Kotlin, Media3, Jellyfin Kotlin SDK, Compose (`docs/decisions/ADR-001-technology-stack.md`, accepted 2026-11-20).
-- Build, run and deploy commands: added here once the stack is chosen.
+- Technology stack: Meta Spatial SDK with Kotlin, Media3, Jellyfin Kotlin SDK, Compose (ADR-001). Hybrid app: a window for browsing, an immersive cinema for watching (ADR-003).
+- Build and run: `./gradlew build` (all checks), `./gradlew runOnQuest` (debug app on the connected headset), `./gradlew spotlessApply` (formatting). Details, build types and signing in `docs/architecture.md`.
+- Releases: version in `app/build.gradle.kts`, notes in `CHANGELOG.md`, tag `vX.Y.Z`; the release key is in `private/`. Latest: 0.1.0.
 
 ## Rules
 

@@ -1,0 +1,10 @@
+* text=auto
+
+# Shell scripts must keep Unix line endings to run on Linux (CI), batch files Windows ones.
+gradlew text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+
+*.jar binary
+*.png binary
+*.apk binary

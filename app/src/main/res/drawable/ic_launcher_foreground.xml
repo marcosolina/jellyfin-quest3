@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A cinema screen with a play symbol and a row of seats, inside the 72 dp safe zone of an adaptive icon. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M34,36 L74,36 Q78,36 78,40 L78,62 Q78,66 74,66 L34,66 Q30,66 30,62 L30,40 Q30,36 34,36 Z"
+        android:strokeWidth="3"
+        android:strokeColor="#FFFFFFFF" />
+    <path
+        android:fillColor="#FF00A4DC"
+        android:pathData="M48,43 L48,59 L61,51 Z" />
+    <path
+        android:pathData="M36,74 L72,74"
+        android:strokeWidth="3"
+        android:strokeColor="#FFAA5CC3"
+        android:strokeLineCap="round" />
+</vector>
