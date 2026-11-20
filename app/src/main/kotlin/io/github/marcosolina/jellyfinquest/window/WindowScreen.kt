@@ -1,16 +1,14 @@
-package io.github.marcosolina.jellyfinquest.home
+package io.github.marcosolina.jellyfinquest.window
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -18,21 +16,17 @@ import androidx.compose.ui.unit.dp
 import io.github.marcosolina.jellyfinquest.R
 import io.github.marcosolina.jellyfinquest.diagnostics.HardwareReport
 import io.github.marcosolina.jellyfinquest.diagnostics.HardwareSection
+import io.github.marcosolina.jellyfinquest.ui.AppTheme
 
-/** The milestone 1 panel: greeting, version, a passthrough switch that proves input works, and the decoder list. */
+/** The window's content for milestone 2: greeting, version, the way into the cinema, and the decoder list. */
 @Composable
-fun HomePanel(
+fun WindowScreen(
     version: String,
-    passthroughOn: Boolean,
-    onTogglePassthrough: () -> Unit,
     hardware: HardwareReport?,
+    onEnterCinema: () -> Unit,
 ) {
-    MaterialTheme(colorScheme = darkColorScheme()) {
-        Surface(
-            modifier = Modifier.fillMaxSize(),
-            shape = RoundedCornerShape(32.dp),
-            color = MaterialTheme.colorScheme.surface,
-        ) {
+    AppTheme {
+        Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.surface) {
             Column(
                 modifier = Modifier.padding(32.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp),
@@ -44,9 +38,7 @@ fun HomePanel(
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
-                Button(onClick = onTogglePassthrough) {
-                    Text(stringResource(if (passthroughOn) R.string.room_hide else R.string.room_show))
-                }
+                Button(onClick = onEnterCinema) { Text(stringResource(R.string.enter_cinema)) }
                 HorizontalDivider()
                 HardwareSection(hardware)
             }

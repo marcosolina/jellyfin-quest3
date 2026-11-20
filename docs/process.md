@@ -123,7 +123,7 @@ The findings are written in the iteration file. Refactoring worth doing becomes 
 - Commit messages start with the work item ID: `JQ-012 Add server sign-in screen`.
 - Versions follow semantic versioning, starting at `0.1.0` for the walking skeleton and staying below `1.0.0` until the app is good enough for daily use.
 - `CHANGELOG.md` in the root is created with the first release.
-- Claude does not commit, push, tag or publish without Marco's go-ahead.
+- Claude does not commit, push, tag or publish without Marco's go-ahead, with one standing exception agreed on 2026-11-21: once Marco accepts a milestone on the headset, Claude releases it (commit, merge into `main`, tag, push) without asking again.
 
 ## Environments
 
