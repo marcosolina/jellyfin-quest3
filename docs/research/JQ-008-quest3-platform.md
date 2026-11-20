@@ -67,6 +67,7 @@ Caveats:
 
 - They appear in the **Library**, under **Unknown Sources** (the tab shows up once at least one such app is installed). They can also be started from MQDH or from the command line.
 - They are not covered by Meta's cloud backup and get no automatic updates: updates are installed from the PC.
+- Horizon OS does not show their icon: the library lists them by name only, and Settings shows a "?" placeholder, whatever icon the APK contains (seen on Marco's headset, 2026-11-21).
 - Some users report the Unknown Sources tab disappearing after system updates until a reboot *(community reports)*.
 
 ### Platform SDK

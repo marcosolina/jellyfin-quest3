@@ -2,6 +2,20 @@
 
 All notable changes to the app. Versions follow semantic versioning ([process.md](docs/process.md#source-control-and-versions)).
 
+## 0.2.0 (2026-11-21)
+
+Milestone 2: hybrid shell ([iteration 3](docs/iterations/iteration-03-hybrid-shell.md), [ADR-003](docs/decisions/ADR-003-hybrid-app.md)).
+
+### Changed
+
+- The app now opens as a normal Horizon OS window, with the system bar (name, close, minimise, fullscreen). The window shows the greeting, the version and the decoder list.
+- The app icon is now the Jellyfin logo (by the Jellyfin contributors, CC BY-SA 4.0).
+
+### Added
+
+- "Enter cinema" opens the immersive scene: a control panel over the room, with "Hide the room" and the handle bar.
+- "Back to window" closes the cinema and brings the window back as it was.
+
 ## 0.1.0 (2026-11-20)
 
 Milestone 1: hello world on the Quest 3 ([iteration 2](docs/iterations/iteration-02-hello-world.md)).

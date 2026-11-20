@@ -26,7 +26,7 @@ Marco is new to Quest and Android development and to video encoding and decoding
 - Live status: `docs/board.md`.
 - Technology stack: Meta Spatial SDK with Kotlin, Media3, Jellyfin Kotlin SDK, Compose (ADR-001). Hybrid app: a window for browsing, an immersive cinema for watching (ADR-003).
 - Build and run: `./gradlew build` (all checks), `./gradlew runOnQuest` (debug app on the connected headset), `./gradlew spotlessApply` (formatting). Details, build types and signing in `docs/architecture.md`.
-- Releases: version in `app/build.gradle.kts`, notes in `CHANGELOG.md`, tag `vX.Y.Z`; the release key is in `private/`. Latest: 0.1.0.
+- Releases: version in `app/build.gradle.kts`, notes in `CHANGELOG.md`, tag `vX.Y.Z`; the release key is in `private/`. Latest: 0.2.0.
 
 ## Rules
 
@@ -35,5 +35,5 @@ Marco is new to Quest and Android development and to video encoding and decoding
 - Every significant technical choice gets an ADR, written so a non-expert can follow it.
 - No application code before Marco approves the iteration plan.
 - Keep the code well organized and readable; end every iteration with a code structure review whose refactoring needs become backlog tasks (`docs/process.md`, Code quality).
-- No commit, push, tag or release without Marco's go-ahead.
+- No commit, push, tag or release without Marco's go-ahead. Standing exception: once Marco accepts a milestone on the headset, release it (commit, merge, tag, push) without asking again.
 - Markdown: one line per paragraph (no hard wrap); no spaced dashes in prose.

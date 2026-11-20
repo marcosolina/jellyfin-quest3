@@ -1,6 +1,6 @@
 # ADR-002: Code quality tooling
 
-**Status:** Proposed (2026-11-20), awaiting Marco's approval
+**Status:** Accepted (2026-11-20)
 
 ## Context
 
