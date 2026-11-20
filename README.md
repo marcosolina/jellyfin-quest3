@@ -21,7 +21,11 @@ The prioritized list of work is in the [backlog](docs/backlog.md).
 
 ## Status
 
-Iteration 2: milestone 1, a hello world app on the Quest 3 to prove the tools and the install process. The technology is chosen: Meta Spatial SDK with Kotlin ([ADR-001](docs/decisions/ADR-001-technology-stack.md)). The [board](docs/board.md) shows the current state.
+Version 0.1.0, a hello world app, runs on the Quest 3: it proves the tools and the install process ([changelog](CHANGELOG.md)). Next: the app opens as a normal Quest window and switches to the immersive cinema for watching. The [board](docs/board.md) shows the current state.
+
+## Building
+
+The app is built with Meta Spatial SDK and Kotlin ([ADR-001](docs/decisions/ADR-001-technology-stack.md)). With Android Studio installed and a Quest 3 in developer mode connected to the PC, `./gradlew runOnQuest` builds the app, installs it on the headset and starts it. Details in [docs/architecture.md](docs/architecture.md).
 
 ## How the project is run
 

@@ -7,6 +7,8 @@ Architecture decision records (ADRs): one file per significant technical choice,
 | ADR | Title | Status |
 |---|---|---|
 | [ADR-001](ADR-001-technology-stack.md) | Technology stack: Meta Spatial SDK with Kotlin | Accepted (2026-11-20) |
+| [ADR-002](ADR-002-code-quality-tooling.md) | Code quality tooling: Spotless with ktlint, strict Android Lint, detekt later | Proposed |
+| [ADR-003](ADR-003-hybrid-app.md) | Hybrid app: a window for browsing, an immersive cinema for watching | Accepted (2026-11-20) |
 
 ## Format of an ADR
 

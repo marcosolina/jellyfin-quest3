@@ -69,17 +69,44 @@ In the cinema, the video goes straight to the compositor, so subtitles cannot be
 
 MVC (Blu-ray 3D) cannot be decoded as stereo on Android *(unconfirmed)*: such files would play as 2D.
 
+### Confirmed on the headset (2026-11-20)
+
+Milestone 1 listed the decoders Android reports on Marco's Quest 3 (Horizon OS with Meta VR OS SDK level 210, spike JQ-022):
+
+| Codec | Decoder | Largest size reported | 10 bit | HDR |
+|---|---|---|---|---|
+| H.264 | Hardware | 8192 x 8192 | no | no |
+| HEVC | Hardware | 8192 x 8192 | yes | yes |
+| VP9 | Hardware | 7680 x 7680 | yes | yes |
+| AV1 | Hardware | 8192 x 8192 | yes | yes |
+| Dolby Vision | Hardware | 8192 x 8192 | | yes |
+| MPEG-4 Part 2 | Software | 1344 x 1344 | | |
+| MPEG-2 | None | | | |
+| AAC, FLAC, Opus | Software (built into Android) | | | |
+| AC-3, E-AC-3 | Software (built into Android) | | | |
+| DTS, TrueHD | None | | | |
+
+What this changes:
+
+- **H.264 High 10 is not supported** in hardware, as expected: those 18 files need the server.
+- **Dolby Vision has a hardware decoder**: profile 8 files may play directly; to test with a real file.
+- **AC-3 and E-AC-3 are decoded by Android itself**, so 63% of Marco's audio tracks need no extra decoder. The FFmpeg extension is still needed for **DTS and TrueHD** (175 tracks), unless the server converts those.
+- **MPEG-4 Part 2 has a software decoder** up to 1344 pixels, enough for Marco's SD Xvid files; their AVI container still needs a server remux.
+- Android reports the **display as HDR capable**. What that means for video shown on a compositor layer needs a test with a real HDR file.
+- Android's capability check says **no to 8192 x 4096 at 60 fps** for every codec, although Meta states it as the hardware limit. The check can be conservative: to verify with real 180/360 files.
+
 ## Recommendation
 
 - Direct play H.264 and HEVC; let the server transcode H.264 10 bit, MPEG-4 Part 2, MPEG-2, AVI and Dolby Vision profile 7.
-- Bundle the FFmpeg audio decoder so the server never transcodes audio only because of AC-3, DTS or TrueHD.
+- Bundle the FFmpeg audio decoder for DTS and TrueHD, so the server never transcodes audio for them (AC-3 and E-AC-3 turned out to be built into Android, see above).
 - Start by declaring no HDR support in the device profile (server tone mapping); test direct HDR on the headset later.
 - Subtitles on a separate panel; libass for ASS.
 - Detect the projection from Jellyfin, then file metadata, then filename tags, with a manual override in the player.
 
 ## Open points
 
-- Confirm on the headset: HEVC 10 bit, H.264 High 10, AC-3 and E-AC-3 decoders, maximum resolutions (milestone 1 decoder list).
+- ~~Confirm on the headset: HEVC 10 bit, H.264 High 10, AC-3 and E-AC-3 decoders, maximum resolutions~~: done, see [Confirmed on the headset](#confirmed-on-the-headset-2026-11-20).
+- Real playback tests: Dolby Vision profile 8, HDR10 on a layer, 8K 180/360 at 60 fps.
 - What happens with HDR10 sent directly to a layer.
 - Refresh rate matching for 24 fps films (72 Hz) through Spatial SDK.
 

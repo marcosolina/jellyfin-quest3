@@ -69,7 +69,7 @@ Limits: screenshots are flat, so 3D depth and comfort can only be judged by Marc
 
 ## Open points
 
-- Whether Windows 11 needs the Oculus ADB driver on this PC: found out at the first connection.
+- ~~Whether Windows 11 needs the Oculus ADB driver on this PC~~: not needed. On 2026-11-20 Windows 11 recognized the headset for `adb` without it. Android Studio Rabbit brings Java 25, which builds the project as is.
 - Whether to adopt Meta's `metavr` tool for screenshots and logs: decided after milestone 1.
 
 ## Sources

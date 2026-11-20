@@ -15,6 +15,7 @@ Technical terms used in this project, in plain language. New terms are added the
 | Platform SDK | Meta's library for store services (purchases, achievements, matchmaking). Not used by this project. |
 | 2D panel app | An app that runs in a flat window inside the Quest home environment, like a phone or tablet app on a large floating screen. |
 | Immersive app | An app that takes over the whole view and draws its own 3D world, for example a virtual cinema. |
+| Hybrid app | An app that opens as a 2D window, with the system's window bar, and switches to an immersive scene when needed. This app's design ([ADR-003](decisions/ADR-003-hybrid-app.md)). |
 | OpenXR | The industry standard programming interface between VR apps and headsets. Immersive Quest apps use it, directly or through a framework. |
 | Compositor | The part of the headset's system that builds the final picture for each eye, combining what apps send it and correcting for the lenses. |
 | Compositor layer | A picture (a video frame, a menu) handed directly to the compositor, which places it on a flat, curved or spherical surface. Sharper than drawing the same picture inside the 3D scene, because it is resampled only once. |
@@ -32,6 +33,9 @@ Technical terms used in this project, in plain language. New terms are added the
 | Gradle | The build tool of Android projects: it compiles the code and produces the APK. The Gradle wrapper (`gradlew`) downloads the right Gradle version automatically. |
 | Meta Spatial SDK | Meta's Kotlin framework for immersive and mixed reality apps on Quest, with built-in video layers. The chosen framework ([ADR-001](decisions/ADR-001-technology-stack.md)). |
 | Jetpack Compose | Android's toolkit for building screens and menus in Kotlin code. |
+| Interaction SDK (ISDK) | The part of Meta's SDK that handles pointing, poking and grabbing with controllers and hands, for example the handle bar that moves a panel. |
+| Signing key | The private key that signs an APK. Android installs an update only if it is signed with the same key as the installed app; the release key is kept in `private/`. |
+| Debug and release builds | Two variants of the app: debug for development (separate app named "(dev)" on the headset, signed with Android's debug key), release for real use (signed with the release key). |
 | Jellyfin Kotlin SDK | The official Kotlin library for talking to a Jellyfin server. |
 | Media3 / ExoPlayer | Android's video player library, also used by the official Jellyfin Android apps. |
 | MediaCodec | The Android interface to the device's hardware video and audio decoders. |

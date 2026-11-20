@@ -82,7 +82,7 @@ The page Marco linked is the **Meta Horizon Platform SDK** (still titled "Oculus
 ## Open points
 
 - Whether the Quest 3 asks for organization ID verification: discovered when Marco enables developer mode.
-- Current Horizon OS version on Marco's headset: read it once the headset is connected.
+- ~~Current Horizon OS version on Marco's headset~~: on 2026-11-20, after a system update, Android 14 (API 34), build `UP1A.231005.007.A1`, Meta VR OS SDK level 210. Developer mode was enabled through the phone app; no ID verification request was reported.
 
 ## Sources
 
