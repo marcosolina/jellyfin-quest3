@@ -3,13 +3,13 @@
 /private/
 
 # Gradle and Kotlin
-.gradle/
-.kotlin/
-build/
+.gradle
+.kotlin
+build
 
 # Editors (Android Studio, VS Code) and the local SDK path
 .idea/
-.vscode/
+.vscode
 *.iml
 local.properties
 captures/
